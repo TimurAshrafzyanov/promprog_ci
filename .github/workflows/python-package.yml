@@ -38,5 +38,6 @@ jobs:
     - name: Test with pytest
       run: |
         pip3 install pytest
-        export APP_ID=afe5cdf4f4748da15396b0d2e7aa723d
         PYTHONPATH=src python3 -m pytest tests
+      env:
+          APP_ID: afe5cdf4f4748da15396b0d2e7aa723d
