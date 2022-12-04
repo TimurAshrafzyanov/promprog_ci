@@ -38,7 +38,7 @@ jobs:
     - name: Test with pytest
       run: |
         pip install pytest
-        PYTHONPATH=src python -m pytest tests
+        PYTHONPATH=simple_weather_app python -m pytest tests
       env:
           APP_ID: ${{ secrets.WEATHER_API_KEY }}
     - name: Build Wheel
