@@ -1,3 +1,6 @@
 *.pyc
 __pycache__/
 /.cache/
+simple_weather_app.egg-info/
+dist/
+build/
