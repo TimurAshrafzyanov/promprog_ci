@@ -1,2 +1,4 @@
 requests
 flask
+flake8>4
+wheel
