@@ -41,3 +41,12 @@ jobs:
         PYTHONPATH=src python -m pytest tests
       env:
           APP_ID: ${{ secrets.WEATHER_API_KEY }}
+    - name: build_wheel
+      script:
+        - python setup.py bdist_wheel
+      artifacts:
+          paths:
+              - dist/simple_weather_app-1.0-py3-none-any.whl
+          expire_in: 1 week
+      only:
+          - master
