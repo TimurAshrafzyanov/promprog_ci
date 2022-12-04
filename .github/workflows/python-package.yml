@@ -40,4 +40,4 @@ jobs:
         pip3 install pytest
         PYTHONPATH=src python3 -m pytest tests
       env:
-          APP_ID: secrets.WEATHER_API_KEY
+          APP_ID: ${{ secrets.WEATHER_API_KEY }}
