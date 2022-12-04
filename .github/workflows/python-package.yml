@@ -40,4 +40,4 @@ jobs:
         pip3 install pytest
         PYTHONPATH=src python3 -m pytest tests
       env:
-          APP_ID: afe5cdf4f4748da15396b0d2e7aa723d
+          APP_ID: secrets.WEATHER_API_KEY
