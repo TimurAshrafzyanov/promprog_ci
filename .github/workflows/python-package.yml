@@ -41,12 +41,12 @@ jobs:
         PYTHONPATH=src python -m pytest tests
       env:
           APP_ID: ${{ secrets.WEATHER_API_KEY }}
-    - name: build_wheel
+    - name: Build Wheel
       run: |
         python setup.py bdist_wheel
-      artifacts:
-          paths:
-              - dist/simple_weather_app-1.0-py3-none-any.whl
-          expire_in: 1 week
-      only:
-          - master
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: simple_weather_app
+        path: dist/simple_weather_app-1.0-py3-none-any.whl
+        retention-days: 7
