@@ -1,14 +1,9 @@
 import os
 import requests
 
-from flask import Flask
-from flask import request
-
 
 # Openweathermap API Token
 APP_ID = os.environ.get('APP_ID', '')
-
-app = Flask(__name__)
 
 
 def parse_weather(data):
@@ -30,17 +25,3 @@ def get_weather(city):
 
     except Exception as e:
         return f'API error: {e}'
-
-
-@app.route("/")
-def weather():
-    city = request.args.get('city', 'Sankt-Peterburg')
-    return get_weather(city)
-
-
-@app.route("/")
-def index():
-    return "Welcome! The service takes a date and gives corresponding day of the week"
-
-if __name__ == "__main__":
-    app.run()
